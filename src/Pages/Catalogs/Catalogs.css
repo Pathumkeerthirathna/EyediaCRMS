@@ -1,0 +1,12 @@
+ .search{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  width: 100%;
+  
+  .search-input{
+    border-radius: 10px;
+    width: auto;
+    border: 1px solid lightgray;
+  }
+}

@@ -1,0 +1,37 @@
+.product-container{
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    flex-wrap: wrap; 
+    gap: 0.2rem;
+  }
+  
+   .card-container {
+     display: flex;
+    width: 17rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid lightgray;
+    flex-shrink: 0;
+  }
+
+    .product-div2{
+    flex: 1;
+    min-width: 280px;
+    background-color: #ffffff;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 15px;
+    margin-left: 1.5rem;
+
+    /* .convert-into-customer-btn{
+        background-color: #00A457;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 13px;
+    } */
+  }
