@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../config";
 
 export default function Login(){
 
@@ -11,7 +12,10 @@ export default function Login(){
     //setLoading(true);
 
     try {
-      const res = await fetch("https://localhost:7050/api/User/Authenticate", {
+
+      console.log(BASE_URL);
+
+      const res = await fetch("/api/User/Authenticate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -19,6 +23,8 @@ export default function Login(){
           password: form.password,
         }),
       });
+
+      console.log(res);
 
       const data = await res.json();
 

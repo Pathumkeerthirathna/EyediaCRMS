@@ -4,6 +4,7 @@ import UserListComponent from "../Components/UserListComponent";
 import UserDetailCard from "../Components/UserDetailCard";
 import RegisterUserCard from "../Components/RegisterUserCard";
 import { UserFormData } from "../types";
+import { BASE_URL } from "../../../config";
 
 export default function UserPage(){
 
@@ -18,7 +19,6 @@ export default function UserPage(){
 
     const [formErrors,SetFormErrors] = useState<Record<string,string>>({});
 
-
     useEffect(()=>{
       
       fetchUsers();
@@ -26,10 +26,13 @@ export default function UserPage(){
     },[]);
 
     const fetchUsers = async () =>{
+
+      console.log(BASE_URL);
+
         try{
             SetLoading(true);
             setError(null);
-            const response = await fetch("https://localhost:7050/api/User/GetUser");
+            const response = await fetch(`${BASE_URL}/api/User/GetUser`);
 
             if(!response.ok){
               throw new Error('HTTP error');
@@ -79,7 +82,7 @@ export default function UserPage(){
 
       try{
         
-        const res = await fetch("https://localhost:7050/api/User/RegisterUser",{
+        const res = await fetch(`${BASE_URL}/api/User/RegisterUser`,{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify(formData)
@@ -131,7 +134,7 @@ export default function UserPage(){
     console.log(editableUser);
 
     try {
-      const response = await fetch(`https://localhost:7050/api/User/UpdateUser`, {
+      const response = await fetch(`${BASE_URL}/api/User/UpdateUser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -167,7 +170,7 @@ export default function UserPage(){
 
       try {
         const response = await fetch(
-          "https://localhost:7050/api/User/SaveUserRoles",
+          `${BASE_URL}/api/User/SaveUserRoles`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

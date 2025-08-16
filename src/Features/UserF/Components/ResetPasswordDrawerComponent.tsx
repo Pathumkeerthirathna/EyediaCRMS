@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Drawer, IconButton, Typography } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import ResetPasswordForm from "./Forms/FrmResetPassword";
+import { BASE_URL } from "../../../config";
 
 type ResetPasswordDrawerProps = {
   open: boolean;
@@ -37,7 +38,7 @@ export default function ResetPasswordDrawerComponent({ open, onClose,userName,id
         try {
 
             const response = await fetch(
-          "https://localhost:7050/api/User/UpdateAccountSettings",
+          `${BASE_URL}/api/User/UpdateAccountSettings`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
