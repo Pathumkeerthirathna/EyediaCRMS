@@ -15,7 +15,7 @@ export default function Login(){
 
       console.log(BASE_URL);
 
-      const res = await fetch("/api/User/Authenticate", {
+      const res = await fetch(`${BASE_URL}/api/User/Authenticate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -23,8 +23,6 @@ export default function Login(){
           password: form.password,
         }),
       });
-
-      console.log(res);
 
       const data = await res.json();
 
