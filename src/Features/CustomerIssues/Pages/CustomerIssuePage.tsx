@@ -12,7 +12,7 @@ import {
 
 import SupportNotes from "../Components/SupportNotes";
 
-import { ChatBox } from "../Components/chatbox";
+import { ChatBox } from "../Components/ChatBox";
 
 import { SupportGuidelinePanel } from "../Components/SupportGuidelinePanel";
 
